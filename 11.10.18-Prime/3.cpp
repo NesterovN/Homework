@@ -5,20 +5,55 @@ using namespace std;
 
 int main () {
 	int n, k;
+	float res = 1;
 	cin >> n;
 	cin >> k;
 	
-	int a = 1, b = 1, c = 1;
-	for (int i = 2; i <= n; i++){
-		a *= i;
+	if (k == 1){
+		res = n;
+		cout << n;
+		return 0;
 	}
-	for (int i = 2; i <= k; i++){
-		b *= i;
+	if (k == 0){
+		res = 0;
+		cout << res;
+		return 0;
 	}
-	for (int i = 2; i <= (n - k); i++){
-		c *= i;
+	
+	int b, c;
+	if (k < (n - k)){
+	b = k;
+	c = n - k;
 	}
-	int res = a/b/c;
+	else {
+	b = n - k;
+	c = k;
+	}
+	
+	float a = 0, m = c;
+	int i;
+	for (i = 1; i <= b; i++){
+		if (m < n){
+			m++;
+			res *= m;
+			res /= i;
+		}
+		else {
+			a = 1;
+			break;
+		}
+	}
+		if (a == 0){
+			m++;
+			for (m; m <= n; m++){
+			res *= m;
+			}
+		}
+		else {
+			for (i; i <= b; i++) {
+				res /= i;
+			}	
+		}
 	cout << res;
 	return 0;
 }
