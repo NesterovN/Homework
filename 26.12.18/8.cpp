@@ -13,12 +13,13 @@ int main()
     int *c = new int[N];
     for (int i = 1; i < N; i++)
     {
-        cout << "вес " << i << " предмета: "; 			cin >> w[i];
+        cout << "вес " << i << " предмета: "; 			
+        cin >> w[i];
         cout << "стоимость " << i << " предмета: "; 
         cin >> c[i];
         cout << endl;
     }
-    int **A = new  *int[N];
+    int **A = new int*[N];
     for (int i = 0; i < N; i++)
     A[i] = new int[M];
     
