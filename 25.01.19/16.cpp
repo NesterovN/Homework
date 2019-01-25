@@ -1,36 +1,47 @@
-//Нахождение максимального произведения пары элементов
+// Нахождение максимального четного произведения
 #include <iostream>
-
 using namespace std;
-
 int main()
 {
-	int sum, y, m;
-	int *M = new int[6];
-	int n;
+	int a = 0, b = 0, c = 1, d = 1, m, n;
+	int *y = new int[6];
 	cin >> n;
 	for (int i = 0; i < 6; i++)
 	{
-		cin >> M[i];
+		cin >> y[i];
 	}
-	m = M[0];
-	cin >> y;
-	sum = m * y;
-	M[0] = y;
-	for (int i = 7; i < n; i++)
+	for (int i = 6; i < n; i++)
 	{
-		cin >> y;
-		if (M[i % 6] > m)
+		cin >> m;
+		if ((y[i % 6] % 2 != c % 2) && (c % 2 == d % 2))
 		{
-			m = M[i % 6];
+			d = y[i % 6];
 		}
-		if (sum < m * y)
+		if ((y[i % 6] % 2 == c % 2) && (y[i % 6] > c))
 		{
-			sum = m * y;
+			c = y[i % 6];
 		}
-		M[i % 6] = y;
+		if ((y[i % 6] % 2 == d % 2) && (y[i % 6] > d))
+		{
+			d = y[i % 6];
+		}
+
+		if ((a < c * m) && ((x % 2 == 0) || (c % 2 == 0)))
+		{
+			a = c * m;
+		}
+		if ((b < d * m) && ((m % 2 == 0) || (d % 2 == 0)))
+		{
+			b = d * m;
+		}
+		y[i % 6] = m;
 	}
-	cout << sum;
-	delete[ ] M;
+	if ((a == 0) && (b == 0))
+	{
+		cout << "-1";
+		return 0;
+	}
+	else
+		cout << max(a, b);
 	return 0;
 }
