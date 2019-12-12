@@ -69,7 +69,7 @@ if(l > 7)cout<<b[7][i];
 if(l > 8)cout<<b[8][i];
 if(l > 9)cout<<b[9][i];
 cout<<endl;
-
+}
 l = l + 1;
 nn = nn*k;
 int *p = new int [l];
