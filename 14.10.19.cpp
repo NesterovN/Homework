@@ -1,4 +1,4 @@
-/*Последовательность Дебрёина для k < 10 для ДНК */
+/*Debroin sequence for k <10 for DNA*/
 #include <iostream>
 #include <string>
 #include <vector>
